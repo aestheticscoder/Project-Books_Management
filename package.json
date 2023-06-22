@@ -1,0 +1,20 @@
+{
+  "name": "project-books_management",
+  "version": "1.0.0",
+  "description": "It is a project that focuses on managing books and their reviews. It provides a set of APIs to perform various operations related to users, books, and reviews. \r Models\r User Model\r     {\r   title: {string, mandatory, enum[Mr, Mrs, Miss]},\r   name: {string, mandatory},\r   phone: {string, mandatory, unique},\r   email: {string, mandatory, valid email, unique}, \r   password: {string, mandatory, minLen 8, maxLen 15},\r   address: {\r     street: {string},\r     city: {string},\r     pincode: {string}\r   },\r   createdAt: {timestamp},\r   updatedAt: {timestamp}\r }",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1",
+    "nodemon": "^2.0.22",
+    "validator": "^13.9.0"
+  }
+}
