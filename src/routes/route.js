@@ -40,9 +40,9 @@ router.delete("/:bookId", authMiddleware, deleteBook);
 router.post("/:bookId/review", createReview);
 
 // Update Review
-router.put("/:bookId/:reviewId", updateReview);
+router.put("/:bookId/review/:reviewId", updateReview);
 
 // Delete Review
-router.delete("/:bookId/:review", deletedReview);
+router.delete("/:bookId/review/:reviewId", deletedReview);
 
 module.exports = router;

@@ -8,7 +8,7 @@ const dotenv = require('dotenv').config();
 
 app.use(express.json());
 
-const url = "mongodb+srv://Ketan_technetium_functionUp:iDikLHzqHJQQP656@clusterketantechnetium.pexlgni.mongodb.net/";
+const url = "mongodb+srv://believe0256:CPuySYUcHa0f9Rad@book-management.vfnphfk.mongodb.net/Book-Management-Db";
 
 mongoose.connect(url, {
     useNewUrlParser: true,

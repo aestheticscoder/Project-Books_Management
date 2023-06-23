@@ -63,9 +63,12 @@ const createReview = async (req, res) => {
       { new: true }
     );
     book.reviewsData = reviewsCreate;
+    // Add reviewId to the book object
+    book.reviewId = reviewsCreate._id;
     res
       .status(201)
       .json({ status: true, message: "Review added successfully", data: book });
+
   } catch (error) {
     if (error.message.includes("validation")) {
       return res.status(400).send({ status: false, message: error.message });
@@ -76,6 +79,8 @@ const createReview = async (req, res) => {
     }
   }
 };
+
+
 
 // Update Review
 
