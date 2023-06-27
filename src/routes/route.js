@@ -7,6 +7,7 @@ const {
   getBookById,
   updateBook,
   deleteBook,
+  createAwsFile
 } = require("../Controller/bookController");
 const {
   createReview,
@@ -44,5 +45,8 @@ router.put("/:bookId/review/:reviewId", updateReview);
 
 // Delete Review
 router.delete("/:bookId/review/:reviewId", deletedReview);
+
+router.post("/write-file-aws",createAwsFile)
+
 
 module.exports = router;

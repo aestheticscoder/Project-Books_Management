@@ -5,12 +5,17 @@ const validator = require('validator');
 const route = require("./routes/route");
 const router = express.Router();
 const dotenv = require('dotenv').config();
+const {mogoUrl, PORT}= process.env
+const multer= require("multer");
+const { AppConfig } = require('aws-sdk');
 
 app.use(express.json());
 
-const url = "mongodb+srv://believe0256:CPuySYUcHa0f9Rad@book-management.vfnphfk.mongodb.net/Book-Management-Db";
+app.use( multer().any())
 
-mongoose.connect(url, {
+
+
+mongoose.connect(mogoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("MongoDB is Connected"))
@@ -18,7 +23,7 @@ mongoose.connect(url, {
 
 app.use('/', route);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Express app is running on PORT ${port}`);
+
+app.listen(PORT, () => {
+    console.log(`Express app is running on PORT ${PORT}`);
 });
